@@ -1,4 +1,7 @@
+import os
 from bs4 import BeautifulSoup as bs
+
+CURRENT_PATH = os.getcwd()
 
 class Parser:
 
@@ -19,6 +22,8 @@ class Parser:
 
 if __name__ == '__main__':
 
+    with open(CURRENT_PATH+'/target_web.html', 'r') as file:
+        html = file.read()
     parser = Parser()
     parser.parser(html)
     parser.print_result()
