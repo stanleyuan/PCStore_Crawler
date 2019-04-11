@@ -8,7 +8,8 @@ class Downloader:
     def request(self, keyword):
         response = None
 
-        if response:
+        if response or keyword:
+            keyword = keyword.encode('big5-hkscs')
             headers = {
                 'authority': 'www.pcstore.com.tw',
                 'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36',
@@ -44,8 +45,20 @@ class Downloader:
 
         return html
 
+    def get_text_from_keyword(self, keyword):
+        html = None
+        response = self.request(keyword)
+        if response:
+            html = self.get_response_text(response)
+
+        return html
+
+
 
 if __name__ == '__main__':
     downloader = Downloader()
-    response = downloader.request('手機'.encode('big5-hkscs'))
-    html = downloader.get_response_text()
+    response = downloader.request('手機')
+    html = downloader.get_response_text(response)
+    print(html)
+    html = downloader.get_text_from_keyword('電腦')
+    print(html)
