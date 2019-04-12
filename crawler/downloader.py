@@ -1,4 +1,6 @@
 """ This modules contains class to request and get response """
+from typing import Optional
+
 import requests
 from requests.models import Response
 
@@ -87,7 +89,7 @@ class Downloader:
 
         return self.html
 
-    def get_text_from_keyword(self, keyword: str) -> str:
+    def get_text_from_keyword(self, keyword: Optional[str] = None) -> str:
         """get_text_from_keyword
 
         Summary:
@@ -103,9 +105,10 @@ class Downloader:
 
         """
         self.html = None
-        response = self.request(keyword)
-        if response:
-            self.html = self.get_response_text(response)
+        if keyword:
+            response = self.request(keyword)
+            if response:
+                self.html = self.get_response_text(response)
 
         return self.html
 

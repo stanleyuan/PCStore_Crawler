@@ -10,3 +10,16 @@
 pipenv sync
 pipenv shell
 ```
+- test
+```bash
+python -m unittest
+```
+
+- requirements
+```bash
+pip install -r requirements.txt
+```
+## Run
+```bash
+python main.py -k[--keyword] '手機'
+```
