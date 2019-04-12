@@ -1,13 +1,32 @@
+""" This module is the controller of crawler """
+from typing import Optional
+
 from crawler.downloader import Downloader
 from crawler.parser import Parser
 
-class Crawler:
 
-    def __init__(self):
+class Crawler:
+    """Crawler"""
+
+    def __init__(self) -> None:
         self.downloader = Downloader()
         self.parser = Parser()
 
-    def scrape(self, keyword=None):
+    def scrape(self, keyword: Optional[str] = None) -> bool:
+        """scrape
+
+        Summary:
+                summary
+
+        Args:
+            keyword: Optional[str]
+
+        Returns:
+                {variable}: bool
+
+        Raises:
+
+        """
         if keyword:
             html = self.downloader.get_text_from_keyword(keyword)
             if html:
@@ -15,9 +34,13 @@ class Crawler:
                 return True
         return False
 
-if __name__ == '__main__':
-    crawler = Crawler()
-    flag = crawler.scrape()
-    print(flag)
-    flag = crawler.scrape('手機')
-    print(flag)
+    def change_url(self):
+        """change_url"""
+
+
+if __name__ == "__main__":
+    CRAWLER = Crawler()
+    FLAG = CRAWLER.scrape()
+    print(FLAG)
+    FLAG = CRAWLER.scrape("手機")
+    print(FLAG)
