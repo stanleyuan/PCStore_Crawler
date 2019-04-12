@@ -22,7 +22,7 @@ class DownloaderTestCase(unittest.TestCase):
         self.assertTrue(html)
 
     def test_get_text_from_keyword(self):
-        html = get_text_from_keyword(self.keyword)
+        html = self.downloader.get_text_from_keyword(self.keyword)
 
         self.assertTrue(html)
 
