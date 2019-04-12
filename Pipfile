@@ -6,6 +6,7 @@ verify_ssl = true
 [packages]
 pudb = "*"
 "beautifulsoup4" = "*"
+monkeytype = "*"
 
 [requires]
 python_version = "3.6"
