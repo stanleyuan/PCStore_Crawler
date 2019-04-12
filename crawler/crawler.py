@@ -1,5 +1,5 @@
-from downloader import Downloader
-from parser import Parser
+from crawler.downloader import Downloader
+from crawler.parser import Parser
 
 class Crawler:
 
