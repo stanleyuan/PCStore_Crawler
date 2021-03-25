@@ -148,7 +148,7 @@ python-pptx==0.6.9
 python-twitter==3.4
 python-xlib==0.23
 pytz==2017.3
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==16.0.3
 qtconsole==4.3.1
 queuelib==1.4.2
