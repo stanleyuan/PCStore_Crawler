@@ -140,7 +140,7 @@ pynput==1.4
 pynvim==0.3.2
 pyOpenSSL==17.5.0
 pyparsing==2.4.0
-pyspark==2.3.0
+pyspark==3.2.2
 pytest==4.4.0
 python-dateutil==2.6.1
 python-dotenv==0.10.1
